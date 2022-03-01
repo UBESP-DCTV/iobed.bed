@@ -15,6 +15,7 @@ Authors@R: c(
 Description: An utility package for the management of raw-signals from the Malvestio's smart-bed at UBEP within the IOBED project.
 License: MIT + file LICENSE
 Suggests: 
+    checkmate,
     spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

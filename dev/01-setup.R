@@ -26,6 +26,7 @@ spelling::update_wordlist()
 
 usethis::use_testthat()
 writeLines("library(checkmate)", here::here("tests/testthat/setup.R"))
+usethis::use_package("checkmate", type = "Suggests")
 usethis::use_r(basename(usethis::use_test("test")))
 
 usethis::use_tidy_description()

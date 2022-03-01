@@ -35,6 +35,23 @@
         "sys"
       ]
     },
+    "autotestthat": {
+      "Package": "autotestthat",
+      "Version": "0.1.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "CorradoLanera",
+      "RemoteRepo": "autotestthat",
+      "RemoteRef": "master",
+      "RemoteSha": "c54fe3096f76d455698eff4ea3e8cb730d55c6b9",
+      "Hash": "f1b8478f830c3b4bbb25cd4609d1630d",
+      "Requirements": [
+        "crayon",
+        "rstudioapi",
+        "testthat"
+      ]
+    },
     "backports": {
       "Package": "backports",
       "Version": "1.4.1",
@@ -836,11 +853,11 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "tibble",
       "RemoteUsername": "tidyverse",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "a9b94b9cfbefea9a7eb162aa9372a19a99541b30",
-      "Hash": "b48f0d0e74fbbfea9e5a2816663d66f5",
+      "RemoteRepo": "tibble",
+      "RemoteRef": "main",
+      "RemoteSha": "0aea047b4d4deb9889651ebc8cb90fb0a9b21857",
+      "Hash": "34d57bdef204b9e5ff9e66e300c1fae8",
       "Requirements": [
         "ellipsis",
         "fansi",

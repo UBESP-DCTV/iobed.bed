@@ -15,15 +15,17 @@ Authors@R: c(
 Description: An utility package for the management of raw-signals from the
     Malvestio's smart-bed at UBEP within the IOBED project.
 License: MIT + file LICENSE
+Imports: 
+    tibble
 Suggests: 
     autotestthat (>= 0.1.1),
     checkmate,
     spelling,
     testthat (>= 3.0.0)
+Remotes: 
+    CorradoLanera/autotestthat
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-Remotes:  
-    CorradoLanera/autotestthat

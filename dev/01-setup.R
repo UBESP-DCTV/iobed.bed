@@ -28,6 +28,8 @@ usethis::use_testthat()
 writeLines("library(checkmate)", here::here("tests/testthat/setup.R"))
 usethis::use_package("checkmate", type = "Suggests")
 usethis::use_r(basename(usethis::use_test("test")))
+renv::install("CorradoLanera/autotestthat")
+usethis::use_dev_package("autotestthat", type = "Suggests")
 
 usethis::use_tidy_description()
 
@@ -46,8 +48,10 @@ usethis::use_github_actions_badge(name = "R-CMD-check-develop")
 usethis::use_github_action("lint")
 usethis::use_github_action("pkgdown")
 
-renv::install("CorradoLanera/autotestthat")
-usethis::use_dev_package("autotestthat", type = "Suggests")
+usethis::use_tibble()
+# required if used w/ Windows machines (even for CI/CD)
+renv::install("tidyverse/tibble", INSTALL_opts = c("--no-multiarch"))
+renv::status()
 
 usethis::use_tidy_description()
 devtools::check_man()
@@ -56,3 +60,8 @@ spelling::update_wordlist()
 lintr::lint_package()
 renv::status()
 devtools::check()
+
+usethis::use_version("dev")
+
+fs::file_create("dev/02-development.R")
+rstudioapi::navigateToFile("dev/02-development.R")

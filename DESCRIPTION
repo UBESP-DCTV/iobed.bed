@@ -12,7 +12,8 @@ Authors@R: c(
     person("Dario", "Gregori", , "dario.gregori@ubep,unipd.it", role = c("aut", "cph"),
            comment = c(ORCID = "0000-0001-7906-0580"))
   )
-Description: An utility package for the management of raw-signals from the Malvestio's smart-bed at UBEP within the IOBED project.
+Description: An utility package for the management of raw-signals from the
+    Malvestio's smart-bed at UBEP within the IOBED project.
 License: MIT + file LICENSE
 Suggests: 
     checkmate,

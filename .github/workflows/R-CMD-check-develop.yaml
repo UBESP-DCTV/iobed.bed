@@ -3,8 +3,6 @@
 on:
   push:
     branches: [develop]
-  pull_request:
-    branches: [develop]
 
 name: R-CMD-check-develop
 

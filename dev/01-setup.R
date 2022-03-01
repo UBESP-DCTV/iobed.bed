@@ -47,6 +47,8 @@ usethis::use_github_action("lint")
 usethis::use_github_action("pkgdown")
 
 renv::install("CorradoLanera/autotestthat")
+usethis::use_dev_package("autotestthat", type = "Suggests")
+
 usethis::use_tidy_description()
 devtools::check_man()
 spelling::spell_check_package()

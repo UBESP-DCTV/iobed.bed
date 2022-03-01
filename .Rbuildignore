@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^iobed\.bed\.Rproj$
 ^\.Rproj\.user$
 ^dev$

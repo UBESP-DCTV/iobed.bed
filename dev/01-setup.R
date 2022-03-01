@@ -36,3 +36,11 @@ usethis::use_git()
 usethis::git_vaccinate()
 usethis::use_github("UBESP-DCTV")
 usethis::use_tidy_github()
+
+renv::init()
+
+usethis::use_github_action_check_standard()
+usethis::use_github_action_check_release("R-CMD-check-develop.yaml")
+usethis::use_github_actions_badge(name = "R-CMD-check-develop")
+usethis::use_github_action("lint")
+usethis::use_github_action("pkgdown")

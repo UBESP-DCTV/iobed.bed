@@ -28,9 +28,21 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
+    <loc>/reference/bed_connection.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
     <loc>/reference/iobed.bed-package.html</loc>
+  </url>
+  <url>
+    <loc>/reference/pull_bed_stream.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tidy_iobed_stream.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tidyeval.html</loc>
   </url>
 </urlset>

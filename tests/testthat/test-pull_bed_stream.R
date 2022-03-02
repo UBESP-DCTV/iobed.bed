@@ -1,6 +1,3 @@
 test_that("pull_bed_stream works", {
-  # setup
-
-
-
+  skip("I don't know how to simulate a stream input for testing...")
 })

@@ -29,7 +29,7 @@
 #'   bed_connection(port = port_used)
 #' }
 bed_connection <- function(port = "COM3", buffersize = 2^21) {
-  serial::serialConnection(
+  con <- serial::serialConnection(
     name = "IOBED connection",
     port = port,
     mode = "38400,n,8,1",
@@ -37,4 +37,13 @@ bed_connection <- function(port = "COM3", buffersize = 2^21) {
     translation = "binary",
     buffersize = buffersize
   )
+
+  usethis::ui_done(
+    "Connection with port {usethis::ui_value(port)} established."
+  )
+  usethis::ui_todo(
+    "Remind to {usethis::ui_code('open(<connection name>)')} it!"
+  )
+
+  invisible(con)
 }

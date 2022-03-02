@@ -19,6 +19,7 @@ autotestthat::auto_test_package_job()
 # Functions -------------------------------------------------------
 usethis::use_r(basename(usethis::use_test("bed_connection")))
 usethis::use_r(basename(usethis::use_test("pull_bed_stream")))
+usethis::use_r(basename(usethis::use_test("tidy_iobed_stream")))
 
 
 

@@ -1,9 +1,24 @@
+
+# Requirements ----------------------------------------------------
+## development/suggested
+dev_pkg <- c("withr")
+renv::install(dev_pkg)
+purrr::walk(dev_pkg, usethis::use_package, type = "Suggests")
+
+
+## production/imports
+pkg <- c("serial")
+renv::install(pkg)
+purrr::walk(pkg, usethis::use_package)
+
+# Tools -----------------------------------------------------------
 autotestthat::auto_test_package_job()
 
 
 
-
-use_r(basename(use_test("<function_name>")))
+# Functions -------------------------------------------------------
+usethis::use_r(basename(usethis::use_test("bed_connection")))
+usethis::use_r(basename(usethis::use_test("pull_bed_stream")))
 
 
 

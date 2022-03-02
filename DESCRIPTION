@@ -16,12 +16,15 @@ Description: An utility package for the management of raw-signals from the
     Malvestio's smart-bed at UBEP within the IOBED project.
 License: MIT + file LICENSE
 Imports: 
+    serial,
     tibble
 Suggests: 
     autotestthat (>= 0.1.1),
     checkmate,
+    purrr,
     spelling,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Remotes: 
     CorradoLanera/autotestthat
 Config/testthat/edition: 3

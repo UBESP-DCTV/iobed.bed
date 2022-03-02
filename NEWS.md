@@ -1,5 +1,8 @@
 # iobed.bed (development version)
 
+-   Added `bed_connection()` (powered by `{serial}`) to create a serial connection to the IOBED bed.
+-   Added support for `{withr}` for testing local environments, and `{purrr}` for functional programming (under *Suggests* packages, for the moment).
+
 # iobed.bed 0.0.0.9000
 
 -   Added support for `{tibble}`.

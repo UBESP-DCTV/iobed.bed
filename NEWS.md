@@ -1,5 +1,10 @@
 # iobed.bed (development version)
 
+-   Added `tidy_iobed_stream()` to convert the raw streamed data collected by `pull_bed_stream()` into a tidy data frame (more in details, a tibble).
+-   Added `pull_bed_stream()` to bring buffered data from an open connection to the IOBED bed.
+-   Added `bed_connection()` (powered by `{serial}`) to create a serial connection to the IOBED bed. Buffer for the connection is set to \~2 MB by default, corresponding to \>1 hours of stream with current data.
+-   Added support for `{withr}` for testing local environments, and `{purrr}` for functional programming (under *Suggests* packages, for the moment).
+
 # iobed.bed 0.0.0.9000
 
 -   Added support for `{tibble}`.

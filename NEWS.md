@@ -1,4 +1,4 @@
-# iobed.bed (development version)
+# iobed.bed 0.1.0
 
 -   Added `tidy_iobed_stream()` to convert the raw streamed data collected by `pull_bed_stream()` into a tidy data frame (more in details, a tibble).
 -   Added `pull_bed_stream()` to bring buffered data from an open connection to the IOBED bed.

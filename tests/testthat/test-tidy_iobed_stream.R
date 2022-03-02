@@ -22,17 +22,48 @@ test_that("tidy_iobed_stream works", {
     "\n", "", "2", "9", "6", " ", " ", " ", " ", "1", "9", "5"
   )
 
+  uscita_stream <- c(
+    "2", "9", "6", " ", " ", " ", " ", "1", "9", "5", " ", " ",
+    " ", "2", "2", "9", " ", " ", " ", " ", "2", "7", "7", " ", " ",
+    " ", " ", "3", "8", " ", " ", " ", " ", " ", "1", "6", ":", "4",
+    "2", ":", "3", "8", "t", "i", "p", "o", " ", "u", "s", "c", "i",
+    "t", "a", "1", "\n", "\n", "", "2", "9", "6", " ", " ",
+    " ", " ", "1", "9", "5", " ", " ", " ", "2", "2", "9", " ", " ",
+    " ", " ", "2", "7", "7", " ", " ", " ", " ", "3", "8", " ", " ",
+    " ", " ", " ", "1", "6", ":", "4", "2", ":", "3", "9", "\n",
+    "\n", "", "2", "9", "6", " ", " ", " ", " ", "1", "9", "5"
+  )
+
+  uscita_ko_stream <- c(
+    " ", " ", " ", " ", "1", "9", "5", " ", " ",
+    " ", "2", "2", "9", " ", " ", " ", " ", "2", "7", "7", " ", " ",
+    " ", " ", "3", "8", " ", " ", " ", " ", " ", "1", "6", ":", "4",
+    "2", ":", "3", "8", "t", "i", "p", "o", " ", "u", "s", "c", "i",
+    "t", "a", "1", "\n", "\n", "", "2", "9", "6", " ", " ",
+    " ", " ", "1", "9", "5", " ", " ", " ", "2", "2", "9", " ", " ",
+    " ", " ", "2", "7", "7", " ", " ", " ", " ", "3", "8", " ", " ",
+    " ", " ", " ", "1", "6", ":", "4", "2", ":", "3", "9", "\n",
+    "\n", "", "2", "9", "6", " ", " ", " ", " ", "1", "9", "5"
+  )
+
   # execute
   tidy_ok <- tidy_iobed_stream(ok_stream)
-  tidy_ko <- tidy_iobed_stream(ko_stream)
+  tidy_ko <- suppressWarnings(tidy_iobed_stream(ko_stream))
+  tidy_uscita <- tidy_iobed_stream(uscita_stream)
+  tidy_ko_uscita <- suppressWarnings(
+    tidy_iobed_stream(uscita_ko_stream)
+  )
 
   # test
   expect_tibble(tidy_ok)
+  expect_silent(tidy_iobed_stream(ok_stream))
+  expect_warning(tidy_iobed_stream(ko_stream), "First row")
   expect_named(
     tidy_ok,
-    c("sbl", "sbr", "sul", "sur","peso","time", "allarme attivo")
+    c("sbl", "sbr", "sul", "sur", "peso", "time", "allarme")
   )
   expect_equal(nrow(tidy_ok), 2)
   expect_equal(nrow(tidy_ko), 1)
-
+  expect_equal(nrow(tidy_uscita), 2)
+  expect_equal(nrow(tidy_ko_uscita), 1)
 })

@@ -7,11 +7,25 @@
 pull_bed_stream(con, close = TRUE)
 }
 \arguments{
-\item{con}{}
+\item{con}{(serialConnection) serial connection for the IOBED bed,
+as obtained by \link{bed_connection}.}
+
+\item{close}{(lgl, default TRUE) would you like the connection will
+be automatically closed after pulling?}
 }
 \value{
-
+a character vector from the data retrieved by the buffer of
+the connection \code{con}, one character each element of the vector.
 }
 \description{
 Pull the stream from the IOBED connection
+}
+\examples{
+\dontrun{
+  con <- bed_connection()
+  pull_bed_stream(con)
+  open(con)
+  # do some stuff
+  close(con)
+}
 }

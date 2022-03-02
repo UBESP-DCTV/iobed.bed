@@ -1,11 +1,22 @@
 #' Pull the stream from the IOBED connection
 #'
-#' @param con
+#' @param con (serialConnection) serial connection for the IOBED bed,
+#'  as obtained by [bed_connection].
+#' @param close (lgl, default TRUE) would you like the connection will
+#'  be automatically closed after pulling?
 #'
-#' @return
+#' @return a character vector from the data retrieved by the buffer of
+#'   the connection `con`, one character each element of the vector.
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#'   con <- bed_connection()
+#'   pull_bed_stream(con)
+#'   open(con)
+#'   # do some stuff
+#'   close(con)
+#' }
 pull_bed_stream <- function(con, close = TRUE) {
   if (!isOpen(con)) {
     usethis::ui_stop("

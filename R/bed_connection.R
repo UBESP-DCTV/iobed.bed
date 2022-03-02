@@ -3,8 +3,7 @@
 #' Setup a connection to the bed serial output with all the
 #' specifications needed for the type of its output stream.
 #'
-#' @param port (chr, default "COM3") the serial port used for the
-#' connection.
+#' @param port (chr) the serial port used for the connection.
 #' @param buffersize (int, default 2^21, i.e. ~2 MB) number of bytes
 #'   to dedicate to the buffer.
 #'
@@ -28,7 +27,7 @@
 #'   port_used <- "COM1"
 #'   bed_connection(port = port_used)
 #' }
-bed_connection <- function(port = "COM3", buffersize = 2^21) {
+bed_connection <- function(port, buffersize = 2^21) {
   con <- serial::serialConnection(
     name = "IOBED connection",
     port = port,

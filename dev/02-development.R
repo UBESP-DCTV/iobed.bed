@@ -7,13 +7,13 @@ purrr::walk(dev_pkg, usethis::use_package, type = "Suggests")
 
 
 ## production/imports
-pkg <- c("serial")
+pkg <- c("serial", "stringr", "readr", "dplyr", "lubridate", "usethis")
 renv::install(pkg)
 purrr::walk(pkg, usethis::use_package)
 
 # Tools -----------------------------------------------------------
 autotestthat::auto_test_package_job()
-
+usethis::use_tidy_eval()
 
 
 # Functions -------------------------------------------------------

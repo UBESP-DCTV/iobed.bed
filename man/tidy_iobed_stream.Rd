@@ -15,6 +15,11 @@ a \link[tibble:tibble-package]{tibble}
 \description{
 Get a stream pulled by \link{pull_bed_stream} and tidy it in a tibble
 }
+\note{
+If the first row is uncompleted it is ignored and a warning
+is signaled (this should not happen!), on the other hand, if the
+last row is not completed (almost always!) it is silently ignored.
+}
 \examples{
 sample_stream <- c(
   "2", "9", "6", " ", " ", " ", " ", "1", "9", "5", " ", " ",

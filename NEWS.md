@@ -1,5 +1,7 @@
 # iobed.bed (development version)
 
+- Update GH installing XQuarz (https://github.com/r-lib/actions/issues/78#issuecomment-611733294), and removing checks for oldrel (which does not have support for the native pipe `|>`).
+
 # iobed.bed 0.1.1
 
 - Updated tests and `tidy_iobed_stream()` with the new bed streamed-output conventions.

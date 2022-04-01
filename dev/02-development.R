@@ -31,9 +31,12 @@ usethis::use_r(basename(usethis::use_test("tidy_iobed_stream")))
 #' --------------------------------------------------------------------
 #'
 usethis::use_tidy_description()
+## CTRL + SHIFT + D
 spelling::spell_check_package()
-spelling::update_wordlist()
+# spelling::update_wordlist()
 
+renv::status()
+# renv::snapshot()
 
 
 #'

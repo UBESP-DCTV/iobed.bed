@@ -1,3 +1,20 @@
 test_that("pull_bed_stream works", {
-  skip("I don't know how to simulate a stream input for testing...")
+  # setup
+  con = tryCatch(
+    suppressWarnings(suppressMessages(bed_connection("COM3"))),
+    error = function(e) FALSE
+  )
+  if (isFALSE(con)) {
+    skip("unplugged connection")
+  } else {
+    withr::defer(close(con))
+
+    Sys.sleep(1)
+
+    # eval
+    stream <- pull_bed_stream(con)
+
+    # tests
+    expect_character(stream)
+  }
 })

@@ -1,8 +1,10 @@
 library(iobed.bed)
 
 # At the beginning of the simulation
-con <- bed_connection()
-
+serial::listPorts()
+con <- bed_connection("COM3")
+open(con)
+serial::isOpen(con)
 
 # At the end of the simulation
 stream <- pull_bed_stream(con)

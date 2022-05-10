@@ -27,7 +27,7 @@
 #'   port_used <- "COM1"
 #'   bed_connection(port = port_used)
 #' }
-bed_connection <- function(port, buffersize = 2^21) {
+bed_connection <- function(port = "COM3", buffersize = 2^21) {
   con <- serial::serialConnection(
     name = "IOBED connection",
     port = port,
@@ -36,13 +36,23 @@ bed_connection <- function(port, buffersize = 2^21) {
     translation = "binary",
     buffersize = buffersize
   )
+  close(con)
+  open(con)
 
-  usethis::ui_done(
-    "Connection with port {usethis::ui_value(port)} established."
-  )
-  usethis::ui_todo(
-    "Remind to {usethis::ui_code('open(<connection name>)')} it!"
-  )
+  if (serial::isOpen(con)) {
+    usethis::ui_done(
+      "Connection with port {usethis::ui_value(port)} established."
+    )
+    usethis::ui_todo(
+      "Remind to {usethis::ui_code('close(<connection name>)')} it!"
+    )
+  } else {
+    usethis::ui_warn(
+      "Connection with port {usethis::ui_value(port)} results closed
+       or not correctly established."
+    )
+  }
 
-  invisible(con)
+
+  con
 }

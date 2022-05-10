@@ -1,4 +1,7 @@
-# iobed.bed (development version)
+# iobed.bed 0.1.3
+
+- skip connection test if not connected
+- improved opening/closing connection management 
 
 # iobed.bed 0.1.2
 

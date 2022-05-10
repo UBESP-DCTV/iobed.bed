@@ -36,8 +36,6 @@ bed_connection <- function(port = "COM3", buffersize = 2^21) {
     translation = "binary",
     buffersize = buffersize
   )
-  close(con)
-  open(con)
 
   if (serial::isOpen(con)) {
     usethis::ui_done(
@@ -47,9 +45,11 @@ bed_connection <- function(port = "COM3", buffersize = 2^21) {
       "Remind to {usethis::ui_code('close(<connection name>)')} it!"
     )
   } else {
-    usethis::ui_warn(
-      "Connection with port {usethis::ui_value(port)} results closed
-       or not correctly established."
+    usethis::ui_info(
+      "Connection with port {usethis::ui_value(port)} results closed."
+    )
+    usethis::ui_todo(
+      "You can open it by {usethis::ui_code('open(<connection name>)')}."
     )
   }
 

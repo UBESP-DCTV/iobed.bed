@@ -7,9 +7,14 @@ test_that("bed_connection works", {
     if (isFALSE(con)) {
       skip("unplugged connection")
     } else {
-      withr::defer(close(con))
+      tryCatch({
+        open(con)
+        withr::defer(close(con))
 
-      # tests
-      expect_class(con, "serialConnection")
+        # tests
+        expect_class(con, "serialConnection")
+      },
+        error = function(e) skip("unplugged connection")
+      )
     }
 })

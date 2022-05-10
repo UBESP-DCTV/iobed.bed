@@ -4,12 +4,12 @@ library(iobed.bed)
 serial::listPorts()
 con <- bed_connection("COM3")
 open(con)
-serial::isOpen(con)
 
 # At the end of the simulation
 stream <- pull_bed_stream(con)
 stream_table <- tidy_iobed_stream(stream)
-
+serial::isOpen(con)
+rm(con)
 
 # Store the resulting table
 today_now <- Sys.time()

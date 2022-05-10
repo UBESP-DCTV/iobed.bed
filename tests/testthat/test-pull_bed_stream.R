@@ -7,14 +7,19 @@ test_that("pull_bed_stream works", {
   if (isFALSE(con)) {
     skip("unplugged connection")
   } else {
-    withr::defer(close(con))
+    tryCatch({
+      open(con)
+      withr::defer(close(con))
 
-    Sys.sleep(1)
+      Sys.sleep(1)
 
-    # eval
-    stream <- pull_bed_stream(con)
+      # eval
+      stream <- pull_bed_stream(con)
 
-    # tests
-    expect_character(stream)
+      # tests
+      expect_character(stream)
+    },
+      error = function(e) skip("unplugged connection")
+    )
   }
 })

@@ -1,6 +1,6 @@
 Package: iobed.bed
 Title: IOBED functions for bed's raw-signals managment at UBEP
-Version: 0.1.3
+Version: 0.1.3.9000
 Authors@R: c(
     person("Corrado", "Lanera", , "corrado.lanera@ubep.unipd.it", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-0520-7428")),

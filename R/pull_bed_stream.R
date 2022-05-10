@@ -18,7 +18,7 @@
 #'   close(con)
 #' }
 pull_bed_stream <- function(con, close = TRUE) {
-  if (!isOpen(con)) {
+  if (!serial::isOpen(con)) {
     usethis::ui_stop("
   {usethis::ui_field('con')} must be an open connection.
     You can create it by {usethis::ui_code('con <- bed_connection()')}
@@ -26,9 +26,9 @@ pull_bed_stream <- function(con, close = TRUE) {
     ")
   }
 
-  withr::defer(
-    if (close) close(con)
-  )
+  if (close) {
+    withr::defer(close(con))
+  }
 
   serial::read.serialConnection(con) |>
     rawToChar(multiple = TRUE)

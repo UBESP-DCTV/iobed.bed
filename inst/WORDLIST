@@ -1,4 +1,5 @@
 CMD
+GH
 IOBED
 IOBED's
 Lifecycle
@@ -7,6 +8,7 @@ Malvestio’s
 Metaprogramming
 ORCID
 UBEP
+XQuarz
 chr
 dplyr
 eval
@@ -15,6 +17,7 @@ iobed
 kB
 lgl
 managment
+oldrel
 rlang
 serialConnection
 tibble

@@ -37,9 +37,10 @@
 #'   "5", "5", "3", "0", " ", " ", " ", " ", " ", "1", "2", ":", "5"
 #' )
 #' tidy_iobed_stream(uscita_stream)
-
 tidy_iobed_stream <- function(stream) {
-  col_names <- c("sbl", "sbr", "sul", "sur", "weight", "clock", "alarm", "elapsed")
+  col_names <- c(
+    "sbl", "sbr", "sul", "sur", "weight", "clock", "alarm", "elapsed"
+  )
 
   string <- stream |>
     stringr::str_c(collapse = "") |>

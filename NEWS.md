@@ -1,4 +1,4 @@
-# iobed.bed (development version)
+# iobed.bed 0.1.2
 
 - some minor improvements in the source code.
 - Added `analyses/test.R` script to test the workflow in a simulated

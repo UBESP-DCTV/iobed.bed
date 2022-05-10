@@ -1,5 +1,9 @@
 # iobed.bed (development version)
 
+- some minor improvements in the source code.
+- Added `analyses/test.R` script to test the workflow in a simulated
+  environment, i.e., from connection to the bed to the saving of the 
+  resulting table in a file.
 - Update GH installing XQuarz (https://github.com/r-lib/actions/issues/78#issuecomment-611733294), and removing checks for oldrel (which does not have support for the native pipe `|>`).
 
 # iobed.bed 0.1.1

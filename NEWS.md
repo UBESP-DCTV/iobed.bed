@@ -1,4 +1,4 @@
-# iobed.bed (development version)
+# iobed.bed 0.2.0
 
 # iobed.bed 0.1.3
 

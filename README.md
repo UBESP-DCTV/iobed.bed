@@ -15,8 +15,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The goal of `{iobed.bed}` is to provide utility functions for the
-management of raw-signals from the Malvestio’s smart-bed at UBEP within
-the IOBED project.
+management of raw-signals from a smart-bed at UBEP within the IOBED
+project.
 
 ## Installation
 

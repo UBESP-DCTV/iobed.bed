@@ -14,6 +14,6 @@ rm(con)
 # Store the resulting table
 today_now <- Sys.time()
 patient_id <- "1234"
-filename <- paste0(today_now, "-", patient_id, "-malvestio.rds")
+filename <- paste0(today_now, "-", patient_id, "-iobed.rds")
 
 readr::write_rds(stream_table, filename)

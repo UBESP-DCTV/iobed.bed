@@ -4,7 +4,7 @@
 \alias{bed_connection}
 \title{Create a connection to IOBED's beds}
 \usage{
-bed_connection(port, buffersize = 2^21)
+bed_connection(port = "COM3", buffersize = 2^21)
 }
 \arguments{
 \item{port}{(chr) the serial port used for the connection.}

@@ -73,7 +73,7 @@ tidy_iobed_stream <- function(stream) {
       elapsed = integer()
     )
   } else {
-    string |>
+    I(string) |>
       readr::read_table(col_names = col_names, col_types = "iiiiicii") |>
       dplyr::mutate(elapsed = 500L - .data[["elapsed"]])
   }

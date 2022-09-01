@@ -1,9 +1,16 @@
+
+- `tidy_iobed_stream` now works correctly with literal data input for
+  ingestion inside `read_table`.
+
 # iobed.bed 0.2.0
+
+- update {renv}.
+
 
 # iobed.bed 0.1.3
 
-- skip connection test if not connected
-- improved opening/closing connection management 
+- skip connection test if not connected.
+- improved opening/closing connection management .
 
 # iobed.bed 0.1.2
 

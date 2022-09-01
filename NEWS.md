@@ -1,3 +1,5 @@
+# iobed.bed 0.2.1
+
 
 - `tidy_iobed_stream` now works correctly with literal data input for
   ingestion inside `read_table`.
